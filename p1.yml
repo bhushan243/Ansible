@@ -2,7 +2,7 @@
   tasks:
    - file:
         src: /tmp/test
-        dest: directory
+        state: directory
    - copy:
         src: /etc/fstab
         dest: /tmp/test
