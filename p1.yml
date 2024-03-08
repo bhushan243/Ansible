@@ -1,7 +1,7 @@
 - hosts: webservers
   tasks:
    - file:
-        src: /tmp/test
+        path: /tmp/test
         state: directory
    - copy:
         src: /etc/fstab
