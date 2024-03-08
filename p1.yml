@@ -1,0 +1,11 @@
+- hosts: webservers
+  tasks:
+   - file:
+        src: /tmp/test
+        dest: directory
+   - copy:
+        src: /etc/fstab
+        dest: /tmp/test
+   - service:
+        name: crond
+        state: restarted
