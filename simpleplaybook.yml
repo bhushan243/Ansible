@@ -1,0 +1,15 @@
+- hosts: webservers
+  gather_facts: false
+  tasks:
+   - name: Create file in /tmp 
+     file:
+        path: /tmp/test
+        state: directory
+   - name: copy file from /etc/fstab to /tmp/test
+     copy:
+        src: /etc/fstab
+        dest: /tmp/test
+   - name: restarted the service crond
+     service:
+        name: crond
+        state: restarted
