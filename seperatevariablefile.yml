@@ -1,0 +1,26 @@
+- name: playbook varaible 
+  gather_facts: false
+  hosts: webservers
+  become: true 
+  vars_files:
+        /root/unit04/test.yml
+       
+  tasks:
+   - name: install httpd
+     yum:
+        name: "{{ websvc }}"  
+   - name: service 
+     service:
+        name: httpd
+        state: started
+        enabled: true
+   - name: create document "{{ webroot }}" 
+     file:
+         name: "{{ webroot }}"
+         dest: directory
+
+   - name: create index.html page 
+     copy:
+          content: "helloworld"
+          dest: "{{ webroot }}/index.html" 
+
