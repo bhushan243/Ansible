@@ -4,14 +4,14 @@
   hosts: webservers
   tasks: 
     - name: ensure httpd is at the latest version
-      yum:
-        name: 
+      yum: 
           - httpd
           - firewalld
     - name: Start service httpd, if not started
       ansible.builtin.service:
         name: httpd
-        state: restarted
+        state: started
+        enabled: true 
  
     
 
