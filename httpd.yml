@@ -5,6 +5,7 @@
   tasks: 
     - name: ensure httpd is at the latest version
       yum: 
+         name:
           - httpd
           - firewalld
     - name: Start service httpd, if not started
