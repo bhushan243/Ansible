@@ -21,6 +21,6 @@
 
    - name: create index.html page 
      copy:
-          name: "helloworld"
+          content: "helloworld"
           dest: "{{ webroot }}/index.html" 
 
