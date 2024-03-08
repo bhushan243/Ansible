@@ -11,7 +11,7 @@
     - name: Start service httpd, if not started
       ansible.builtin.service:
         name: httpd
-        state: started
+        state: restarted
  
     
 
