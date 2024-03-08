@@ -8,12 +8,12 @@
         name: 
           - httpd
           - firewalld
-        state: latest
-    - name: start httpd and firewalld
-      service: 
+    - name: Start service httpd, if not started
+      ansible.builtin.service:
         name: httpd
         state: started
-        enabled: true
+ 
+    
 
     - name: copy file from /tmp/index.html to /var/www/html
       copy: 
