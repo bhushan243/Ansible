@@ -7,6 +7,6 @@
       command: uname -m
       register: xyz
     - debug:
-         var: xyz     
+         var: xyz.stdout    
     
         
