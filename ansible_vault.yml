@@ -7,4 +7,4 @@
    - name: add user and set password
      user:
         name: shyam
-        password: "{{mypass | mypass_hash('sha512')}}"
+        password: "{{mypass | password_hash('sha512')}}"
