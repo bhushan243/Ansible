@@ -1,4 +1,5 @@
-- name: example of list hash loop 
+- name: example of list hash loop
+  hosts: webservers 
   become: yes 
   gather_facts: false
   tasks:
