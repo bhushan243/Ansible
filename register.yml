@@ -4,9 +4,8 @@
  
   tasks: 
     - name: check the hardware mode status 
-      
-         command: uname -m
-         register: xyz
+      command: uname -m
+      register: xyz
     - debug:
          var: xyz     
     
