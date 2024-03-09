@@ -9,4 +9,8 @@
     - debug:
          var: xyz.stdout    
     
+    - name: copy hardware number to /etc/myhosts
+      copy:
+        line: "this is the hardware mode {{ xyz.stdout }} "
+        dest: /etc/myhosts
         
