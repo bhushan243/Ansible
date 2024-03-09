@@ -1,0 +1,21 @@
+- name: variable is declare in inventory file 
+  gather_facts: false
+  become: true
+  hosts: 
+   - webservers
+   - dbservers
+ 
+  tasks: 
+    - name: create the file in two machine
+      file: 
+         path: "{{ webroot }}"
+         state: directory
+    - name: print on screen 
+      debug:
+          var: webroot
+
+    - name: print on screen 
+      debug:
+           var: jdk
+          
+    
