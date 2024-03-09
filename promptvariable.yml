@@ -14,7 +14,7 @@
     - name: Add user and reset password
       user: 
          name: "{{ username }}"
-         password: "{{ password }}"
+         password: "{{ password | password_hash('sha512') }}"
     
         
 
