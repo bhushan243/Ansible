@@ -1,6 +1,6 @@
 - name: Ansible vault 
   become: yes
-  hosts: webserver
+  hosts: webservers
   vars:
      mypass: welcome
   tasks:
