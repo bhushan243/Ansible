@@ -1,0 +1,10 @@
+- name: Ansible vault 
+  become: yes
+  hosts: webserver
+  vars:
+     mypass: welcome
+  tasks:
+   - name: add user and set password
+     user:
+        name: shyam
+        password: "{{mypass | mypass_hash('sha512')}}"
