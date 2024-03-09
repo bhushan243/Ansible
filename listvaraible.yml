@@ -1,0 +1,14 @@
+- name: set up ftp and vsftp server
+  gather_facts: false
+  become: true
+  hosts: webservers
+  vars:
+   mypack:
+    - ftp
+    - vsftp
+  tasks: 
+    - name: ensure httpd is at the latest version
+      yum: 
+         name: "{{ mypack }}"
+         state: installed
+    
