@@ -1,0 +1,9 @@
+- name: setup module and facts usecase 
+  become: yes 
+  hosts: webservers
+  tasks: 
+    - name: copy ipaddress and hostname to /etc/myhosts
+      lineinfile:
+        line: "{{ansible_hostname}} {{ansible_default_ipv4.address}}"
+        dest: /etc/myhosts
+    
