@@ -1,0 +1,13 @@
+- name: example of list hash loop 
+  become: yes 
+  gather_facts: false
+  tasks:
+       - name: copy files into different files 
+         copy:
+           src: "{{ item.file }}"
+           dest: "{{ item.dir }}"
+         with_items:
+              - { file: '/etc/passwd' , dir: '/root' }
+              - { file: '/etc/fstab' , dir: '/tmp' }
+              - { file: '/etc/group' , dir: '/opt' }
+  
