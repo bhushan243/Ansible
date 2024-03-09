@@ -1,8 +1,8 @@
 - name: Ansible vault 
   become: yes
   hosts: webservers
-  vars:
-     mypass: welcome
+  vars_files:
+     /home/ansible/unit04/vault.yml
   tasks:
    - name: add user and set password
      user:
