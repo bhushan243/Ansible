@@ -11,6 +11,6 @@
         name: "{{ item }}"
         state: present
         # remove: yes  # This attempts to remove the user's home directory and mail spool
-      loop: "{{ lookup('file', '/home/ansible/unit04/simple').spiltlines() }}"
+      loop: "{{ lookup('file', '/home/ansible/unit04/simple').splitlines() }}"
 
            
