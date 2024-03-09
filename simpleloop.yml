@@ -1,0 +1,22 @@
+ 
+- name: Remove users from the managed node
+  hosts: webservers
+  become: yes  # This playbook needs to run with root privileges
+  vars:
+    users_to_remove:
+      - ravi
+      - shyam
+      - mahesh
+      - ram 
+      - raffique
+      - apache
+
+  tasks:
+    - name: Remove specified users
+      user:
+        name: "{{ item }}"
+        state: absent
+        remove: yes  # This attempts to remove the user's home directory and mail spool
+      with_items: "{{ users_to_remove }}"
+
+           
