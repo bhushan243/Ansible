@@ -5,7 +5,7 @@
   vars:
    mypack:
     - ftp
-    - vsftp
+    - vsftpd
   tasks: 
     - name: ensure httpd is at the latest version
       yum: 
