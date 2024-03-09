@@ -1,0 +1,13 @@
+- name: set up ftp and vsftp server
+  gather_facts: false
+  become: true
+  hosts: webservers
+  vars:
+      name: ravi
+      pw: redhat
+  tasks: 
+    - name: add user and give me password
+      user: 
+         name: "{{ name }}"
+         password: "{{ pw | password_hash('sha512')}}" 
+    
