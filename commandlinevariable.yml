@@ -1,4 +1,4 @@
-- name: set up ftp and vsftp server
+- name: pass the varaible through command and precedence of command line varaible is more than playbook varaible
   gather_facts: false
   become: true
   hosts: webservers
