@@ -1,0 +1,13 @@
+- name: register variable use case  
+  become: yes 
+  hosts: webservers
+ 
+  tasks: 
+    - name: check the hardware mode status 
+      command:
+         command: uname -m
+         register: xyz
+    - debug:
+         var: xyz     
+    
+        
