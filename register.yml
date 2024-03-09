@@ -11,6 +11,6 @@
     
     - name: copy hardware number to /etc/myhosts
       copy:
-        line: "this is the hardware mode {{ xyz.stdout }} "
+        content: "this is the hardware mode {{ xyz.stdout }} "
         dest: /etc/myhosts
         
