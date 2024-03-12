@@ -1,0 +1,12 @@
+- name: check if the service is present on node 
+  become: yes 
+  gather_facts: true
+  tasks:
+     - name: service name to be check 
+       service:
+          name: sshd
+          state: present 
+          register: xyz
+     - name: display on screen output 
+       debug:
+           vars: xyz
