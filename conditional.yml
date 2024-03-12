@@ -6,11 +6,11 @@
      - name: service name to be check 
        service:
           name: httpd
-          state: started
+          state: reload
        register: xyz
 
      - name: Restart the service if it is already running
        service:
            name: httpd
-           state: restarted
-       when: service_status.changed 
+           state: started
+       when: xyz.changed 
