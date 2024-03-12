@@ -10,4 +10,4 @@
           register: xyz
      - name: display on screen output 
        debug:
-           vars: xyz
+           var: xyz
