@@ -6,7 +6,7 @@
      - name: service name to be check 
        service:
           name: sshd
-          state: present 
+          state: restarted 
           register: xyz
      - name: display on screen output 
        debug:
