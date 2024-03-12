@@ -9,7 +9,7 @@
           state: loaded
        register: xyz
 
-      - name: Restart the service if it is already running
+     - name: Restart the service if it is already running
         service:
            name: httpd
            state: started
