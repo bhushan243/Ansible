@@ -10,4 +10,4 @@
        register: xyz
      - name: display on screen output 
        debug:
-           var: xyz.changed
+           var: xyz.changed = false
