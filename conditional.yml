@@ -5,9 +5,9 @@
   tasks:
      - name: service name to be check 
        service:
-          name: sshd
+          name: httpd
           state: restarted 
        register: xyz
      - name: display on screen output 
        debug:
-           var: xyz
+           var: xyz.changed
