@@ -6,13 +6,13 @@
      - name: service name to be check 
        service:
           name: httpd
-          state: restarted 
+          state: loaded
        register: xyz
 #     - name: display on screen output 
 #      debug:
 #           var: xyz.changed = false
       - name: Restart the service if it is already running
-        ansible.builtin.systemd:
-           name: your_service_name
+        service:
+           name: httpd
            state: started
-       when: service_status.changed : false
+       when: service_status.changed 
