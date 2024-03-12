@@ -1,0 +1,18 @@
+- name: notify and handlers example
+  hosts: webservers
+  gather_facts: false
+  become: true
+  tasks:
+     - name: edit if the configuration file of httpd server is edited 
+       copy:
+          src: httpd.conf
+          dest: /etc/httpd/conf/httpd.conf
+       notify: httpd
+  handlers:
+     - name: httpd
+       service:
+             name: httpd
+             state: restarted
+
+      
+
