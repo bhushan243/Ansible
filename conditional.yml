@@ -15,4 +15,4 @@
         ansible.builtin.systemd:
            name: your_service_name
            state: started
-       when: service_status.changed = false
+       when: service_status.changed : false
