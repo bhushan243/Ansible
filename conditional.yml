@@ -6,7 +6,7 @@
      - name: service name to be check 
        service:
           name: httpd
-          state: loaded
+          state: reloaded
        register: xyz
 
      - name: Restart the service if it is already running
