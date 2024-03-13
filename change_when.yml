@@ -13,7 +13,7 @@
        register: xyz
        notify: restart_db
        changed_when: "'database successfully' in xyz.stdout"
-
+  handlers:
      - name: restart mariadb 
        service:
            name: mariadb
