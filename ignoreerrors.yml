@@ -1,0 +1,18 @@
+- name: ignore errors example 
+  hosts: all 
+  become: yes 
+  tasks: 
+     - name: check the status of chronyd service 
+       command: systemctl is-active chronyd
+       register: xyz 
+       ignore_errors: yes 
+     - name: restart the service if it is already present 
+       service:
+          name: chronyd
+          state: restarted
+       when: xyz.rc == 0
+     - name: start the service if already stop 
+       service:
+           name: chronyd
+           state: started
+       when: xyz.rc != 0          
