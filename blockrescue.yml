@@ -1,0 +1,23 @@
+
+- name: Block, Rescue, and Always Example
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Attempting operations that may fail
+      block:
+        - name: Copy a file to the remote host
+          copy:
+            src: /home/ansible/unit04/test1.yml
+            dest: /home/ansible/
+          # Assuming this task might fail for some reason
+
+      rescue:
+        - name: Run this task if the block encounters an error
+          debug:
+            msg: "The file copy operation failed, executing rescue tasks."
+
+      always:
+        - name: This task runs regardless of the block's success or failure
+          debug:
+            msg: "This task runs no matter what happened before."
