@@ -1,5 +1,5 @@
 - name: example of conditional hash loop
-  gather_facts: false
+  gather_facts: true
   become: true 
   hosts: webservers 
   tasks:
