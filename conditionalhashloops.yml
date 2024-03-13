@@ -6,7 +6,7 @@
       - name: install mariadb package if root size is more then 10 gb 
         yum:
           name: mariadb-server
-          state: present 
+          state: installed 
         when: item.mount == "/" and item.size_available > 10000000000
         with_items:
            - "{{ ansible_mounts }}"
