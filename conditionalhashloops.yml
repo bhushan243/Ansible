@@ -1,0 +1,12 @@
+- name: example of conditional hash loop
+  gather_facts: false
+  become: true 
+  hosts: webservers 
+  tasks:
+      - name: install mariadb package if root size is more then 10 gb 
+        yum:
+          name: mariadb-server
+          state: present 
+        when: item.mount == "/" and item.size_available > 10000000000
+        with_items:
+           - "{{ ansible_mounts }}"
