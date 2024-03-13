@@ -9,7 +9,7 @@
           dest: /etc/httpd/conf/httpd.conf
           remote_src: true
        notify: httpd
- handlers:
+  handlers:
      - name: restart httpd
        service:
              name: httpd
