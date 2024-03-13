@@ -3,8 +3,8 @@
   become: true 
   tasks: 
      - debug:
-           msg:   "check the os before installing mariadb package " 
-       failed_when: ansible_distribution != 'Ubuntu'
+           msg: "check the os before installing mariadb package " 
+       failed_when: ansible_distribution != 'CentOS'
      - name: install httpd package
        yum: 
         name: httpd
