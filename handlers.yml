@@ -5,7 +5,7 @@
   tasks:
      - name: edit if the configuration file of httpd server is edited 
        copy:
-          src: httpd.conf
+          src: /etc/httpd/conf/httpd.conf
           dest: /etc/httpd/conf/httpd.conf
           remote_src: true
        notify: httpd
