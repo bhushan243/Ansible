@@ -1,0 +1,20 @@
+- name: changed when example 
+  hosts: webservers
+  become: yes 
+  tasks:
+     - name: change when this line is there in data base 
+       copy:
+          src: /home/ansible/unit04/run.sh
+          dest: /home/ansible/run.sh
+          mode: 0755
+
+     - name: start upgrade
+       shell: /home/ansible/run.sh
+       register: xyz
+       notify: restart_db
+       changed_when: "'database successfully' in xyz.stdout"
+
+     - name: restart mariadb 
+       service:
+           name: mariadb
+           state: restarted
