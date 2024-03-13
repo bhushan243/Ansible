@@ -1,0 +1,13 @@
+- name: failed when example demo 
+  hosts: webservers
+  become: true 
+  tasks: 
+     - debug:
+           msg:   "check the os before installing mariadb package " 
+       failed_when: ansible_distribution != 'Ubuntu'
+     - name: install httpd package
+       yum: 
+        name: httpd
+        state: installed
+
+         
