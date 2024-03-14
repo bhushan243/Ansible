@@ -6,10 +6,10 @@
         yum:
           name: httpd
           state: installed
-        tags: install
+        tags: ['never' , 'install']
 
       - name: remove httpd server 
         yum: 
           name: httpd
           state: absent
-        tags: removed 
+        tags: ['never' , 'removed'] 
