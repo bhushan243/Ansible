@@ -6,7 +6,7 @@
   tasks:
      - name: check the path 
        stat:
-           path: /dev/nvme0n1p1
+           path: /dev/nvme0n1
        register: xyz
      - name: to show the output in screen 
        debug:
