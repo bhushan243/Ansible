@@ -8,6 +8,8 @@
        stat:
            path: /dev/nvme0n1
        register: xyz
-     - name: to show the output in screen 
-       debug:
-          var: xyz 
+     - name: copy jinja file 
+      template: 
+        src: /home/ansible/unit04/motd.j2
+        dest: /home/ansible/ 
+        
