@@ -1,0 +1,13 @@
+- name: template file  example 
+  hosts: webservers
+  become: true
+  vars:
+      user: ram
+  tasks:
+     - name: check the path 
+       stat:
+           path: /dev/nvme0n1p1
+       register: xyz
+     - name: to show the output in screen 
+       debug:
+          var: xyz 
