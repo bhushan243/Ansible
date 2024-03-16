@@ -1,0 +1,16 @@
+- name: conditional template example 
+  
+  hosts: all
+ 
+  tasks: 
+    - name: check the existance of disk 
+      stat:
+          path: /dev/nvme0n1
+      register: xyz
+    
+    
+    - name: copy hardware report to /etc/myhosts
+      template:
+        content: /home/ansible/Ansible/hwreport.j2
+        dest: /root/hwreport.txt
+        
