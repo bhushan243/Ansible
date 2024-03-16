@@ -1,5 +1,5 @@
 - name: conditional template example 
-  
+  gather_facts: true
   
   hosts: all
  
@@ -13,5 +13,5 @@
     - name: copy hardware report to /etc/myhosts
       template:
         src: /home/ansible/Ansible/hwreport.j2
-        dest: /home/ansible/Ansible/report
+        dest: /home/ansible/Ansible/
         
