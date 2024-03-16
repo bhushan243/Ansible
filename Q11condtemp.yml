@@ -13,5 +13,5 @@
     - name: copy hardware report to /etc/myhosts
       template:
         src: /home/ansible/Ansible/hwreport.j2
-        dest: /home/ansible/Ansible/
+        dest: /home/ansible/Ansible/report
         
