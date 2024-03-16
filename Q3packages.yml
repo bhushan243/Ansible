@@ -1,0 +1,26 @@
+---
+- name: Manage package installation for different environments
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install PHP and MariaDB packages
+      yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - php
+        - mariadb
+      when: inventory_hostname in groups['webservers'] or inventory_hostname in groups['dbservers'] 
+
+    - name: Install the RPM Development Tools package group
+      yum:
+        name: "@Development tools"
+        state: present
+      when: inventory_hostname in groups['webservers']
+
+    - name: Update all packages to the latest version
+      yum:
+        name: "*"
+        state: latest
+      when: inventory_hostname in groups['webservers']
