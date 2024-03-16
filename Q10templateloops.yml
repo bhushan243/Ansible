@@ -1,5 +1,6 @@
 - name: Template loops example 
   hosts: webservers
+  gather_facts: true 
   become: yes 
   tasks: 
      - name: copy jinja file to dev groups machine 
