@@ -1,5 +1,5 @@
 - name: conditional template example 
-  become: yes
+  
   
   hosts: all
  
@@ -12,6 +12,6 @@
     
     - name: copy hardware report to /etc/myhosts
       template:
-        content: /home/ansible/Ansible/hwreport.j2
-        dest: /root/h
+        src: /home/ansible/Ansible/hwreport.j2
+        dest: /home/ansible/Ansible/
         
