@@ -1,0 +1,8 @@
+- name: Template loops example 
+  hosts: webservers
+  become: yes 
+  tasks: 
+     - name: copy jinja file to dev groups machine 
+       template:
+           src: /home/ansible/Ansible/hostdetails.j2
+           dest: /etc/myhosts
