@@ -1,0 +1,24 @@
+- name: install httpd 
+  yum: 
+    name: "{{websvf}}"
+    state: installed
+
+- name: start httpd 
+  service:
+    name: "{{websvf}}"
+    state: started
+    enabled: true 
+
+- name: copy index.html
+  copy:
+     src: index.html
+     dest: "{{webrot}}"
+
+- include_vars: test.yml
+        
+- name: copy jinja file 
+  template:
+     src: httpd.conf.j2
+     dest: "{{webconf}}"
+
+  notify: restart_apache
